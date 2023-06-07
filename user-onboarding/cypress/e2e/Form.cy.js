@@ -15,7 +15,12 @@ describe('Testing form functionality',function(){
     it('gets password and types in it', () => {
         cy.get('input[name=password]')
         .type(`you'llneverhackme`)
-        
+
+    })
+    it('user can check terms of service box', () => {
+        cy.get('input[name=terms]')
+        .click()
+        .should('have.value','on')
     })
 
 
