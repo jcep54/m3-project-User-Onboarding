@@ -5,7 +5,20 @@ import Form from './component/Form.js';
 
 import schema from './validation/forSchema.js';
 import * as yup from 'yup';
-
+const dummyUsers = [
+  {username: 'Jose',
+  email: 'joserocks@gmail.com',
+  password: "you'll never crack this code",
+  terms: true},
+  {username: 'joey',
+  email: 'joserocks@gmail.com',
+  password: "you'll never crack this code",
+  terms: true},
+  {username: 'kelsey',
+  email: 'joserocks@gmail.com',
+  password: "you'll never crack this code",
+  terms: true}
+]
 const initialFormData = {
 username: '',
 email: '',
@@ -30,7 +43,7 @@ function App() {
   const onSubmit = () =>{
     axios.post('https://reqres.in/api/users', formData)
     .then(res => {
-      setUsers([res.data],...users);
+      setUsers([res.data, ...users ] );
     })
     .catch(err => console.error(err))
     .finally(setFormData(initialFormData))
