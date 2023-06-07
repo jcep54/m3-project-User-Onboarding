@@ -4,8 +4,8 @@ describe('Testing form functionality',function(){
     })
     it('adds text to name input', function(){
         cy.get("input[name=username]")
-        .type('daddy')
-        .should('have.value','daddy')
+        .type('test')
+        .should('have.value','test')
     })
     it('gets email and types address', () => {
         cy.get('input[name=email]')
@@ -21,6 +21,10 @@ describe('Testing form functionality',function(){
         cy.get('input[name=terms]')
         .click()
         .should('have.value','on')
+    })
+    it('user can submit form', () => {
+        cy.get('input[type=submit]')
+        .click()
     })
 
 
