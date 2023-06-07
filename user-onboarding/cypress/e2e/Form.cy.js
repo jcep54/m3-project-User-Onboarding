@@ -7,6 +7,17 @@ describe('Testing form functionality',function(){
         .type('daddy')
         .should('have.value','daddy')
     })
+    it('gets email and types address', () => {
+        cy.get('input[name=email]')
+        .type('jose@cep.com')
+        .should('have.value','jose@cep.com')
+    })
+    it('gets password and types in it', () => {
+        cy.get('input[name=password]')
+        .type(`you'llneverhackme`)
+        
+    })
+
 
 
 
